@@ -7,8 +7,15 @@
 <body>
     <div>
         <h1><a href="">Django Test Blog</a></h1>
-        <p>This page is main page!</p>
         <p><a href="/admin">To administrators page</a></p>
     </div>
+
+    {% for post in posts %}
+        <div>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+            <p>published: {{ post.published_date }}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>
