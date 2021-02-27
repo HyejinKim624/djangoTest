@@ -10,5 +10,13 @@
         <p>This page is main page!</p>
         <p><a href="/admin">To administrators page</a></p>
     </div>
+
+    {% for post in posts %}
+        <div>
+            <h3><a href="">{{ post.title }}</a></h3>
+            <p>{{ post.text|linebreaksbr }}</p>
+            <p>published: {{ post.published_date }}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>
